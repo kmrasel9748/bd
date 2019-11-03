@@ -48,16 +48,7 @@
 
 
                 <script>
-                    function setLanguageCookie(cookieValue) {
-                        var today = new Date();
-                        var expire = new Date();
-                        var cookieName = 'lang';
-                        //var cookieValue = "bn";
-                        var nDays = 5;
-                        expire.setTime(today.getTime() + 3600000 * 24 * nDays);
-                        document.cookie = cookieName + "=" + escape(cookieValue) +
-                            ";expires=" + expire.toGMTString();
-                    }
+                    
 
                     function setLanguage() {
                         $("#lang_form").submit();
