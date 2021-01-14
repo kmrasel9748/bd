@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Serena Surprise</title>
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+</head>
+<body>
+
+<audio controls style="display:none;" loop id="music"  >
+    <source  src="https://www.dropbox.com/s/u8brxjmh9nthamy/rain_man.mp3?dl=1">
+</audio>
+
+<div id="loading" onclick="loading();">
+    <label id="loading_text">Touch to play song & continue...</label>
+</div>
+
+<div id="bhomic">
+    <div class="before"></div>
+    <div class="after"></div>
+</div>
+
+<div class="container">
+    <label id="a"><span>Serena Yvonne</span>, This is code is</label><br>
+    <label id="b">gifted 🎁 to you from <span>Bhomic</span><br>(🎁🎁🎁)</label><br>
+    <div class="image_container">
+        <img id="pic" src="https://www.dropbox.com/s/tml6gmrxil8llmj/serena_dp.png?dl=1" width="250px" height="250px">
+    </div><br>
+    <div id="drawing">
+        <img id="drawing_img" src="  https://www.dropbox.com/s/zid3m15i9s4ccxu/IMG_20190417_105300.jpg?dl=1 " width="80%" height="80%"><br> 
+        <label style="font-size: 36px">Happy birthday to you Tisha <br>(💐🌸🏵️🥀🌹🌾🌷)</label><br>
+        <label id="prev_btn" onclick="prevDrawing();">⏪</label>
+        <label id="next_btn" onclick="nextDrawing();">⏩</label>
+    </div>
+</div>
+
+</body>
+</html>
+
+<style type="text/css">
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: 'Great Vibes', cursive;
+    font-size: 30px;
+    overflow-y: hidden;
+}
+
+.container{
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.image_container{
+    height: 250px;
+    line-height: 250px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+#loading{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: black;
+    color: white;
+    position: absolute;
+    z-index: 3;
+}
+
+#loading_text{
+    position: relative;
+    top: 300px;
+    animation: color_change 3s infinite;
+}
+
+#drawing{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 400px;
+    opacity: 0;
+    display: block;
+}
+
+#pic{
+    opacity: 0;
+}
+
+#a,#b{
+    position: relative;
+    opacity: 0;
+    z-index: 1;
+}
+
+#prev_btn{
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    bottom: 300px;
+    display:block;
+    right:120px;
+}
+
+#next_btn{
+    margin-left:auto;
+    margin-right:auto;
+    position: relative;
+    bottom: 340px;
+    display:block;
+    left:120px;
+}
+
+span{  color: yellow;  }
+
+@-webkit-keyframes color_change {
+    0% { color: hotpink; }
+    50% { color: white; }
+    100% { color: hotpink; }
+}
+
+@-webkit-keyframes move_down {
+    0%{top: 0; opacity: 0;}
+    40%{top:170px; opacity: 1;}
+    60%{top:170px; opacity: 1;}
+    100%{top: 400px; opacity: 0}
+}
+
+@-webkit-keyframes move_up {
+    0%{top: 300px; opacity: 0;}
+    40%{top:170px; opacity: 1;}
+    60%{top:170px; opacity: 1;}
+    100%{top:0; opacity: 0}
+}
+
+@-webkit-keyframes move_down_pic {
+    0%{top: 0; opacity: 0;}
+    40%{top:70px; opacity: 1;}
+    70%{top:70px; opacity: 1;}
+    100%{top: 400px; opacity: 0}
+}
+
+@-webkit-keyframes move_up_pic {
+    0%{top: 400px; opacity: 0;}
+    40%{top:270px; opacity: 1;}
+    70%{top:270px; opacity: 1;}
+    100%{top:0; opacity: 0}
+}
+
+@-webkit-keyframes fade {
+    from{opacity: 0}
+    to{opacity: 1}
+}
+
+@-webkit-keyframes fade_out {
+    from{opacity: 1}
+    to{opacity: 0}
+}
+
+
+/*-------------------------------*/
+
+#bhomic{
+    display: none;
+}
+
+#bhomic > .before, #bhomic > .after {
+    position: absolute;
+    z-index: 1;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    box-shadow: -120px -218.66667px #ff0d00, 248px -16.66667px #00ff84, 190px 16.33333px #002bff, -113px -308.66667px #ff009d, -109px -287.66667px #ffb300, -50px -313.66667px #ff006e, 226px -31.66667px #ff4000, 180px -351.66667px #ff00d0, -12px -338.66667px #00f6ff, 220px -388.66667px #99ff00, -69px -27.66667px #ff0400, -111px -339.66667px #6200ff, 155px -237.66667px #00ddff, -152px -380.66667px #00ffd0, -50px -37.66667px #00ffdd, -95px -175.66667px #a6ff00, -88px 10.33333px #0d00ff, 112px -309.66667px #005eff, 69px -415.66667px #ff00a6, 168px -100.66667px #ff004c, -244px 24.33333px #ff6600, 97px -325.66667px #ff0066, -211px -182.66667px #00ffa2, 236px -126.66667px #b700ff, 140px -196.66667px #9000ff, 125px -175.66667px #00bbff, 118px -381.66667px #ff002f, 144px -111.66667px #ffae00, 36px -78.66667px #f600ff, -63px -196.66667px #c800ff, -218px -227.66667px #d4ff00, -134px -377.66667px #ea00ff, -36px -412.66667px #ff00d4, 209px -106.66667px #00fff2, 91px -278.66667px #000dff, -22px -191.66667px #9dff00, 139px -392.66667px #a6ff00, 56px -2.66667px #0099ff;
+    -webkit-animation: 1s blast_off ease-out infinite backwards, 1s pull_down ease-in infinite backwards, 5s positioning linear infinite backwards;
+}
+
+#bhomic > .after {
+    -webkit-animation-delay: 5.25s, 5.25s, 5.25s;
+    -webkit-animation-duration: 1.25s, 1.25s, 6.25s;
+}
+
+@-webkit-keyframes blast_off {
+    from {  box-shadow: 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #ffffff, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #ffffff, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #ffffff, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e, 0 0 #fbff3e;}
+}
+
+@-webkit-keyframes pull_down {
+    to {  -webkit-transform: translateY(200px);  opacity: 0; }
+}
+
+@-webkit-keyframes positioning {
+    0%, 19.9% {
+        top: 10%;
+        left: 40%; }
+    20%, 39.9% {
+        top: 40%;
+        left: 30%; }
+    40%, 59.9% {
+        top: 20%;
+        left: 70%; }
+    60%, 79.9% {
+        top: 30%;
+        left: 20%; }
+    80%, 99.9% {
+        top: 30%;
+        left: 80%; }
+}
+</style>
+<script type="text/javascript">
+
+
+
+var cd=0;
+
+function loading() {
+    var loading = document.getElementById("loading");
+    loading.style.zIndex=0;
+    loading.style.display="none";
+    document.getElementById("music").play();
+    playAnimation();
+}
+
+function nextDrawing() {
+    cd++;
+    setDrawing();
+}
+
+function prevDrawing() {
+    cd--;
+    setDrawing();
+}
+
+function setDrawing() {
+    var drawing_img = document.getElementById("drawing_img");
+
+
+   if(cd==0){
+        drawing_img.src = "   https://www.dropbox.com/s/zid3m15i9s4ccxu/IMG_20190417_105300.jpg?dl=1 ";
+    }else if(cd==1){
+        drawing_img.src = "https://www.dropbox.com/s/yraluyir1g433ov/Serena_Yv_drawing_1.png?dl=1";
+    }else if(cd==2) {
+        drawing_img.src = "https://www.dropbox.com/s/nei66yhkmnlw2by/Serena_Yv_drawing_2.png?dl=1";
+    }else if(cd==3){
+        drawing_img.src = "https://www.dropbox.com/s/pej4hlhyk0iqnm8/Serena_Yv_drawing_3.png?dl=1";
+    }else if(cd==-1){
+        cd=3;
+        drawing_img.src = "https://www.dropbox.com/s/pej4hlhyk0iqnm8/Serena_Yv_drawing_3.png?dl=1";
+    }else{
+        cd=0;
+        drawing_img.src = "https://www.dropbox.com/s/a6mb0ptroiyr7y8/serena_drawing.jpg?dl=1";
+    }
+}
+
+
+
+function playAnimation() {
+
+    var a = document.getElementById('a');
+    var b = document.getElementById('b');
+    var pic = document.getElementById('pic');
+    var drawing = document.getElementById("drawing");
+    var bhomic = document.getElementById("bhomic");
+
+    a.style.animation = 'move_down 10s';
+    a.style.animationFillMode='forwards';
+
+    b.style.animation = 'move_up 10s';
+    b.style.animationFillMode='forwards';
+
+    setTimeout(function () {
+
+        animateIt("Even With Your Eyes Close.", "You are awsm, what if they were open<br>😆😉😇", "yellow", true);
+
+        pic.style.animation = 'fade 6s';
+        pic.style.animationFillMode='forwards';
+        setTimeout(function () {
+            pic.style.animation = 'fade_out 4s';
+            pic.style.animationFillMode='forwards';
+            setTimeout(function () {
+
+                animateIt("The most <span>powerful coder</span> ever known 😆", "<br>Someone who <span>Care</span> for others too much 😅😆😇", "white");
+
+            setTimeout(function () {
+
+                animateIt("<span>Serena Yvonne</span>, I have something very special for you 😅", "I <span>draw</span> this 🙈 for you, Hope you'll like it 🖼🎨🌸", "white", true);
+
+                setTimeout(function () {
+                    drawing.style.animation="fade 5s";
+                    drawing.style.animationFillMode="forwards";
+                    bhomic.style.display="block";
+                },10000);
+            },10000);
+        },4000);
+        },6500);
+    },10000);
+
+    function animateIt(text1, text2, color, isPic) {
+
+        var ani1 = (isPic?"move_down_pic 10s":"move_down 10s");
+        var ani2 = (isPic?"move_up_pic 10s":"move_up 10s");
+
+        a.innerHTML=text1;
+        a.style.animation = ani1;
+        a.style.color=color;
+        b.innerHTML=text2;
+        b.style.animation = ani2;
+        b.style.color=color;
+    }
+}
+</script>
